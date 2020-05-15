@@ -44,6 +44,10 @@ body {
 .fighter-image {
     height: 260px;
 }
+.fighter-image-model {
+    height: 200px;
+    align-self: center;
+}
 
 #loading-overlay {
     position: absolute;
