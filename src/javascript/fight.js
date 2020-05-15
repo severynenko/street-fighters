@@ -3,11 +3,11 @@ export function fight(firstFighter, secondFighter) {
   let {health: healthSecond} = secondFighter;
 
   while (true) {
-    healthSecond -= getDamage(secondFighter, firstFighter);
+    healthSecond -= getDamage(firstFighter, secondFighter);
     if (healthSecond <= 0) {
       return firstFighter;
     }
-    healthFirst -= getDamage(firstFighter, secondFighter);
+    healthFirst -= getDamage(secondFighter, firstFighter);
     if (healthFirst <= 0) {
       return secondFighter;
     }
@@ -16,8 +16,8 @@ export function fight(firstFighter, secondFighter) {
 }
 
 export function getDamage(attacker, enemy) {
-  const hitPower = getHitPower(enemy);
-  const blockPower = getBlockPower(attacker);
+  const hitPower = getHitPower(attacker);
+  const blockPower = getBlockPower(enemy);
   const damage = hitPower - blockPower;
   return damage;
   // damage = hit - block
