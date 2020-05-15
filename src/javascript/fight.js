@@ -18,7 +18,10 @@ export function fight(firstFighter, secondFighter) {
 export function getDamage(attacker, enemy) {
   const hitPower = getHitPower(attacker);
   const blockPower = getBlockPower(enemy);
-  const damage = hitPower - blockPower;
+  let damage = hitPower - blockPower;
+  if (damage < 0) {
+    damage = 0
+  }
   return damage;
   // damage = hit - block
   // return damage 
